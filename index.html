@@ -13,16 +13,16 @@
         <h1 class="title">Pop Quiz Time!!!</h1>
         <p class="timer"></p>
         <p class="instructions">You'll be taking a timed Quiz. For each correct answer you will receive 20pts. You will also be timed, for every wrong answer 5 seconds will be reduced. 
-        You will start with 0 seconds and if it reaches zero quiz will end and we will determine score fom there. <strong class="good-luck">GOOD LUCK</strong></p>
+        You will start with 60 seconds and if it reaches zero, then you'll get your score. <strong class="good-luck">GOOD LUCK!!</strong></p>
         <button id="start-button">START</button>
     </header>
-    
-    <section id="question-1">
-      <button class="answer1 hide" onclick="questionAnswer('1')"> 1</button>
-      <button class="answer2 hide" onclick="questionAnswer('2')">2</button>
-      <button class="answer3 hide" onclick="questionAnswer('3')">3</button>
-      <button class="answer4 hide" onclick="questionAnswer('4')">4</button>  
-      <p class="result1"></p> 
+    <section class="question-container hide">
+      <div class="question-1">Question</div>
+      <button class="answer1 btn" onclick="questionAnswer('1')"> 1</button>
+      <button class="answer2 btn" onclick="questionAnswer('2')">2</button>
+      <button class="answer3 btn" onclick="questionAnswer('3')">3</button>
+      <button class="answer4 btn" onclick="questionAnswer('4')">4</button>  
+      <p class="result1"></p>
     </section>
  <script src="css/script.js"></script>
 </body>

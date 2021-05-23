@@ -40,7 +40,7 @@ var questions = [
       correct: "1"},
 ];
 
-var questionBox = document.getElementById("question-1")
+var questionBox = document.querySelector(".question-1")
 var questionIndex = 0;
 var nextQuestion = questions.length - 1;
 
@@ -49,18 +49,19 @@ var nextQuestion = questions.length - 1;
 
 //added am event listener to start a timer 
 startBtn.addEventListener("click", startQuiz);
-
-function startQuiz() {
+ 
+function startQuiz(event) {
 // added function to run first question display
+event.preventDefault()
+// removed and added hide attributes
 startBtn.classList.add("hide");
 instructions = document.querySelector(".instructions");
 instructions.classList.add("hide");
 title = document.querySelector(".title");
 title.classList.add("hide");
-answerBtn1.classList.remove("hide");
-answerBtn2.classList.remove("hide");
-answerBtn3.classList.remove("hide");
-answerBtn4.classList.remove("hide");
+ questionContainer = document.querySelector(".question-container")
+ questionContainer.classList.remove("hide");
+
 displayQuestion();
 
 
@@ -69,7 +70,7 @@ var timerInterval = setInterval(function (){
      timer.textContent = countdownTimer + " seconds left";
      
      
-     if (countdownTimer  === 0 || questionIndex < 4) {
+     if (countdownTimer  === 0){
          clearInterval(timerInterval);
          return;
      }
