@@ -28,7 +28,7 @@
 .question-container {
     border: black 2px groove;
     width: 30%;
-    height: 400px;
+    height: 450px;
     margin-left: 33%;
     margin-top: 11%;
 }
@@ -52,4 +52,10 @@
     color: blach;
     font-weight: bolder;
     font-size: 20px;
+}
+
+.result1 {
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
 }

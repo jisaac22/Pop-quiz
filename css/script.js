@@ -85,12 +85,18 @@ function displayQuestion() {
    answerBtn3.textContent = quest.answerBtn3;
    answerBtn4.textContent = quest.answerBtn4;
 };
+
+var result = document.querySelector(".result1");
+ 
 //added function to run next question 
 function questionAnswer(answer){
     if(questions[questionIndex].correct == answer){
-        console.log("correct")
+        result.textContent = "Correct!";
+
     } else {
-        console.log("wrong")
+        result.textContent = "Incorrect!";
+// added increased counter if answer if incorrect
+        countdownTimer-=10;
     }
     questionIndex++
     displayQuestion()
