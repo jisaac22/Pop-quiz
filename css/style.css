@@ -59,3 +59,29 @@
     font-size: 20px;
     text-align: center;
 }
+.result-container {
+    border: black 2px groove;
+    width: 30%;
+    height: 450px;
+    margin-left: 33%;
+    margin-top: 11%;
+}
+
+.name {
+    padding: 20px;
+    margin-left: 8%;
+    font-size: 25px;
+    margin-top: 5%;
+}
+ 
+.submit-btn {
+    padding: 5px;
+    margin-left: 40%;
+    margin-top: 5%;
+}
+
+.final-result {
+    margin-top: 30px;
+    font-size: 20px;
+    color: brown;
+}

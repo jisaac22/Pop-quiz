@@ -6,7 +6,6 @@ var answerBtn3 = document.querySelector(".answer3");
 var answerBtn4 = document.querySelector(".answer4");
 var countdownTimer = 60;
 var timer = document.querySelector(".timer")
-var score = 20;
 var questions = [
     {question: " What is the first number place holder of an Array? ",
      answerBtn1: "1",
@@ -42,7 +41,6 @@ var questions = [
 
 var questionBox = document.querySelector(".question-1")
 var questionIndex = 0;
-var nextQuestion = questions.length - 1;
 
 
 
@@ -61,17 +59,17 @@ title = document.querySelector(".title");
 title.classList.add("hide");
  questionContainer = document.querySelector(".question-container")
  questionContainer.classList.remove("hide");
-
-displayQuestion();
-
-
+ displayQuestion()
+ 
 var timerInterval = setInterval(function (){
      countdownTimer--;
      timer.textContent = countdownTimer + " seconds left";
-     
-     
-     if (countdownTimer  === 0){
+     //added end quiz and display results
+     if (countdownTimer  === 0 || questions.length == questionIndex){
          clearInterval(timerInterval);
+         questionContainer.classList.add("hide")
+         resultContainer.classList.remove("hide")
+
          return;
      }
  }, 1000)
@@ -84,20 +82,30 @@ function displayQuestion() {
    answerBtn2.textContent = quest.answerBtn2;
    answerBtn3.textContent = quest.answerBtn3;
    answerBtn4.textContent = quest.answerBtn4;
+  
 };
-
+var score = 0;
 var result = document.querySelector(".result1");
- 
+var counter = document.querySelector(".counter");
+
+
 //added function to run next question 
 function questionAnswer(answer){
     if(questions[questionIndex].correct == answer){
         result.textContent = "Correct!";
-
+      counter.textContent = score+=20;
+      localStorage.setItem("counter", score)
     } else {
         result.textContent = "Incorrect!";
 // added increased counter if answer if incorrect
-        countdownTimer-=10;
-    }
-    questionIndex++
-    displayQuestion()
-}
+        countdownTimer-=10; };
+        questionIndex++
+        displayQuestion()
+  };
+
+var resultContainer = document.getElementById("show-results");
+var userName = document.querySelector(".name");
+var submitBtn = document.querySelector(".submit-btn")
+ function showResults(){
+
+ }
