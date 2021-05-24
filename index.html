@@ -14,7 +14,7 @@
         <p class="timer"></p>
         <p class="counter"></p>
         <p class="instructions">You'll be taking a timed Quiz. For each correct answer you will receive 20pts. You will also be timed, for every wrong answer 5 seconds will be reduced. 
-        You will start with 60 seconds and if it reaches zero, then you'll get your score. <strong class="good-luck">GOOD LUCK!!</strong></p>
+        You will start with 50 seconds and if it reaches zero, then you'll get your score. <strong class="good-luck">GOOD LUCK!!</strong></p>
         <button id="start-button">START</button>
     </header>
     <section class="question-container hide">
@@ -26,11 +26,13 @@
       <p class="result1"></p>
     </section>
     <!--added container to show results-->
-    <section id="show-results" class="result-container ">
-        <textarea class="name">Input Name</textarea> 
+    <section id="show-results" class="result-container">
+        <p class="name-input">Input Name</p>
+        <input class="name"></input> 
         <button class="submit-btn">Submit</button>
-        <p class="final-result">Your final score is</p>
-
+        <p class="final-result"></p>
+        <p class="saved-name">Name:</p>
+        <p class="saved-result">Grade:</p>
     </section>
  <script src="css/script.js"></script>
 </body>

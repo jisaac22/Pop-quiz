@@ -1,3 +1,7 @@
+body {
+    background-color:steelblue ;
+}
+
 .title {
     text-align: center;
 }
@@ -7,6 +11,7 @@
     width: 75%;
     font-size: 25px;
     margin-left: 12%;
+    font-weight: bold;
 }
 
 #start-button {
@@ -31,6 +36,7 @@
     height: 450px;
     margin-left: 33%;
     margin-top: 11%;
+    background-color: white;
 }
 
 .question-1 {
@@ -45,6 +51,7 @@
     margin-top: 25px;
     margin-left: 5px;
     font-size: 15px;
+    border: double black 5px;
 }
 
 .btn:hover {
@@ -62,26 +69,60 @@
 .result-container {
     border: black 2px groove;
     width: 30%;
-    height: 450px;
+    height: 550px;
     margin-left: 33%;
     margin-top: 11%;
+    background-color: white;
 }
 
 .name {
     padding: 20px;
-    margin-left: 8%;
+    margin-left: 18%;
     font-size: 25px;
-    margin-top: 5%;
+    margin-top: 1%;
 }
  
 .submit-btn {
-    padding: 5px;
-    margin-left: 40%;
+    padding: 10px;
+    margin-left: 45%;
     margin-top: 5%;
+    border: black 4px solid;
+    font-size: 25px;
 }
-
+.submit-btn:hover {
+    font-size: 30px;
+}
 .final-result {
     margin-top: 30px;
-    font-size: 20px;
+    font-size: 25px;
     color: brown;
+    margin-left: 30%;
+    font-weight: bolder;
+}
+
+.name-input {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.saved-name{
+ margin-top: 90px;
+ font-size: 35px;
+}
+
+.saved-result {
+font-size: 35px;
+}
+
+.timer {
+    font-size: 40px;
+    text-align: center;
+    color: blue;
+}
+
+.counter {
+    font-size: 35px;
+    text-align: center;
+    color: red;
 }

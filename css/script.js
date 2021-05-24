@@ -4,7 +4,7 @@ var answerBtn1 = document.querySelector(".answer1");
 var answerBtn2 = document.querySelector(".answer2");
 var answerBtn3 = document.querySelector(".answer3");
 var answerBtn4 = document.querySelector(".answer4");
-var countdownTimer = 60;
+var countdownTimer = 50;
 var timer = document.querySelector(".timer")
 var questions = [
     {question: " What is the first number place holder of an Array? ",
@@ -69,7 +69,7 @@ var timerInterval = setInterval(function (){
          clearInterval(timerInterval);
          questionContainer.classList.add("hide")
          resultContainer.classList.remove("hide")
-
+         showResults()
          return;
      }
  }, 1000)
@@ -104,8 +104,29 @@ function questionAnswer(answer){
   };
 
 var resultContainer = document.getElementById("show-results");
-var userName = document.querySelector(".name");
-var submitBtn = document.querySelector(".submit-btn")
- function showResults(){
 
- }
+   
+var submitBtn = document.querySelector(".submit-btn");
+var finalGrade = document.querySelector(".final-result");
+var savedName = document.querySelector(".saved-name");
+var savedGrade = document.querySelector(".saved-result");
+
+
+
+submitBtn.addEventListener("click", function(event) {
+ event.preventDefault()
+
+ if (userNameSaved === "") {
+   finalGrade.textContent = "Enter a name"
+ } 
+ else {
+ finalGrade.textContent = " Your final score is " + score;
+}
+// added local storage to display username and score 
+ var userNameSaved = document.querySelector(".name").value;
+ userName = localStorage.getItem("name");
+ localStorage.setItem("name", userNameSaved);
+ savedName.textContent = "Name: " + userNameSaved;
+ savedGrade.textContent = "Score: " + score;
+ 
+});
