@@ -112,7 +112,7 @@ var savedName = document.querySelector(".saved-name");
 var savedGrade = document.querySelector(".saved-result");
 
 
-
+finalGrade.textContent = " Your final score is " + score;
 submitBtn.addEventListener("click", function(event) {
  event.preventDefault()
 
@@ -120,13 +120,13 @@ submitBtn.addEventListener("click", function(event) {
    finalGrade.textContent = "Enter a name"
  } 
  else {
- finalGrade.textContent = " Your final score is " + score;
-}
+ 
+
 // added local storage to display username and score 
  var userNameSaved = document.querySelector(".name").value;
  userName = localStorage.getItem("name");
  localStorage.setItem("name", userNameSaved);
  savedName.textContent = "Name: " + userNameSaved;
  savedGrade.textContent = "Score: " + score;
- 
+ }
 });

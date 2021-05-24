@@ -118,7 +118,8 @@ font-size: 35px;
 .timer {
     font-size: 40px;
     text-align: center;
-    color: blue;
+    color: black;
+    font-weight: bolder;
 }
 
 .counter {
