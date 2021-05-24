@@ -52,6 +52,8 @@ function startQuiz(event) {
 // added function to run first question display
 event.preventDefault()
 // removed and added hide attributes
+timer.classList.remove("hide");
+counter.classList.remove("hide");
 startBtn.classList.add("hide");
 instructions = document.querySelector(".instructions");
 instructions.classList.add("hide");
@@ -86,7 +88,7 @@ function displayQuestion() {
 };
 var score = 0;
 var result = document.querySelector(".result1");
-var counter = document.querySelector(".counter");
+var counter = document.querySelector(".score");
 
 
 //added function to run next question 
@@ -112,15 +114,14 @@ var savedName = document.querySelector(".saved-name");
 var savedGrade = document.querySelector(".saved-result");
 
 
-finalGrade.textContent = " Your final score is " + score;
+
 submitBtn.addEventListener("click", function(event) {
  event.preventDefault()
-
  if (userNameSaved === "") {
    finalGrade.textContent = "Enter a name"
  } 
  else {
- 
+  
 
 // added local storage to display username and score 
  var userNameSaved = document.querySelector(".name").value;
