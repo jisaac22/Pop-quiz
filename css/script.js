@@ -1,46 +1,55 @@
-//pulled a couple of buttons to document
-var startBtn = document.getElementById("start-button");
-var answerBtn1 = document.querySelector(".answer1");
-var answerBtn2 = document.querySelector(".answer2");
-var answerBtn3 = document.querySelector(".answer3");
-var answerBtn4 = document.querySelector(".answer4");
-var countdownTimer = 50;
-var timer = document.querySelector(".timer")
-var questions = [
-    {question: " What is the first number place holder of an Array? ",
+const startBtn = document.getElementById("start-button");
+const answerBtn1 = document.querySelector(".answer1");
+const answerBtn2 = document.querySelector(".answer2");
+const answerBtn3 = document.querySelector(".answer3");
+const answerBtn4 = document.querySelector(".answer4");
+let countdownTimer = 50;
+const timer = document.querySelector(".timer")
+let questions = [
+    {
+      question: " What is the first number place holder of an Array? ",
      answerBtn1: "1",
      answerBtn2: "2",
      answerBtn3: "0",
      answerBtn4: "3",
-     correct: "3"},
-    { question: " What is Boolean defined as ?",
+     correct: "3"
+    },
+    { 
+      question: " What is Boolean defined as ?",
       answerBtn1: "Yes/No",
       answerBtn2: "True/False",
       answerBtn3: "Maybe",
       answerBtn4: "All of the above",
-      correct: "2"},
-    { question: "What is the HTML tag under which one can write the JavaScript code?",
+      correct: "2"
+    },
+    { 
+      question: "What is the HTML tag under which one can write the JavaScript code?",
       answerBtn1: "<javascript>",
       answerBtn2: "<scripted>",
       answerBtn3: "<js>",
       answerBtn4: "<script>",
-      correct: "4"},
-    { question: " Which of the following is not a data type? ",
+      correct: "4"
+    },
+    {
+      question: " Which of the following is not a data type? ",
       answerBtn1: "Boolean",
       answerBtn2: "String",
-      answerBtn3: "Variable",
+      answerBtn3: "letiable",
       answerBtn4: "Number",
-      correct: "3"},
-    { question: " What logs data directly to the console?",
+      correct: "3"
+    },
+    { 
+      question: " What logs data directly to the console?",
       answerBtn1: "console.log",
       answerBtn2: "console.set",
       answerBtn3: "console.save",
       answerBtn4: "console.input",
-      correct: "1"},
+      correct: "1"
+    },
 ];
 
-var questionBox = document.querySelector(".question-1")
-var questionIndex = 0;
+let questionBox = document.querySelector(".question-1")
+let questionIndex = 0;
 
 
 
@@ -49,9 +58,7 @@ var questionIndex = 0;
 startBtn.addEventListener("click", startQuiz);
  
 function startQuiz(event) {
-// added function to run first question display
 event.preventDefault()
-// removed and added hide attributes
 timer.classList.remove("hide");
 counter.classList.remove("hide");
 startBtn.classList.add("hide");
@@ -59,11 +66,16 @@ instructions = document.querySelector(".instructions");
 instructions.classList.add("hide");
 title = document.querySelector(".title");
 title.classList.add("hide");
- questionContainer = document.querySelector(".question-container")
- questionContainer.classList.remove("hide");
+questionContainer = document.querySelector(".question-container")
+questionContainer.classList.remove("hide");
  displayQuestion()
- 
-var timerInterval = setInterval(function (){
+//  startTime()
+
+}
+
+
+function startTime(){
+  let timerInterval = setInterval(function (){
      countdownTimer--;
      timer.textContent = countdownTimer + " seconds left";
      //added end quiz and display results
@@ -86,9 +98,9 @@ function displayQuestion() {
    answerBtn4.textContent = quest.answerBtn4;
   
 };
-var score = 0;
-var result = document.querySelector(".result1");
-var counter = document.querySelector(".score");
+let score = 0;
+let result = document.querySelector(".result1");
+let counter = document.querySelector(".score");
 
 
 //added function to run next question 
@@ -97,21 +109,22 @@ function questionAnswer(answer){
         result.textContent = "Correct!";
       counter.textContent = score+=20;
       localStorage.setItem("counter", score)
-    } else {
-        result.textContent = "Incorrect!";
+    } else 
+    {  result.textContent = "Incorrect!";
 // added increased counter if answer if incorrect
-        countdownTimer-=10; };
+        countdownTimer-=10; 
+    };
         questionIndex++
         displayQuestion()
   };
 
-var resultContainer = document.getElementById("show-results");
+const resultContainer = document.getElementById("show-results");
 
    
-var submitBtn = document.querySelector(".submit-btn");
-var finalGrade = document.querySelector(".final-result");
-var savedName = document.querySelector(".saved-name");
-var savedGrade = document.querySelector(".saved-result");
+const submitBtn = document.querySelector(".submit-btn");
+const finalGrade = document.querySelector(".final-result");
+const savedName = document.querySelector(".saved-name");
+const savedGrade = document.querySelector(".saved-result");
 
 
 
@@ -124,7 +137,7 @@ submitBtn.addEventListener("click", function(event) {
   
 
 // added local storage to display username and score 
- var userNameSaved = document.querySelector(".name").value;
+ let userNameSaved = document.querySelector(".name").value;
  userName = localStorage.getItem("name");
  localStorage.setItem("name", userNameSaved);
  savedName.textContent = "Name: " + userNameSaved;

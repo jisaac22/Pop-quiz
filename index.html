@@ -1,39 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="./css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Pop Quiz</title>
 </head>
+
 <body>
-    <header id="starter">
-        <!--added title header and start button-->
-        <h1 class="title">Pop Quiz Time!!!</h1>
-        <p class="timer hide">50</p>
-        <p class="score hide">0</p>
-        <p class="instructions">You'll be taking a timed Quiz. For each correct answer you will receive 20pts. You will also be timed, for every wrong answer 5 seconds will be reduced. 
-        You will start with 50 seconds and if it reaches zero, then you'll get your score. <strong class="good-luck">GOOD LUCK!!</strong></p>
-        <button id="start-button">START</button>
-    </header>
-    <section class="question-container hide">
-      <div class="question-1">Question</div>
-      <button class="answer1 btn" onclick="questionAnswer('1')"> 1</button>
-      <button class="answer2 btn" onclick="questionAnswer('2')">2</button>
-      <button class="answer3 btn" onclick="questionAnswer('3')">3</button>
-      <button class="answer4 btn" onclick="questionAnswer('4')">4</button>  
-      <p class="result1"></p>
-    </section>
-    <!--added container to show results-->
+  <header id="starter">
+    <h1 class="title">Pop Quiz Time!!!</h1>
+  </header>
+  <section class="details">
+    <div class="details2"> 
+     <p class="timer hide">50</p>
+     <p class="score hide">0</p>
+     <p class="instructions">
+     You'll be taking a timed Quiz. For each correct answer you will receive 20pts. You will
+     also be timed, for every wrong answer 5 seconds will be reduced.
+     You will start with 50 seconds and if it reaches zero, then you'll get your score. <strong class="good-luck">GOOD LUCK!!</strong>
+    </p>
+     <button id="start-button" class="startBtn btn">START</button>
+     <p class="result1"></p>
+    </div> 
+  </section>
+  <section class="question-container">
+    <div class="question-container2"> 
+     <p class="question-1">Question</p>
+     <div class="answer-btn-container">
+     <button class="answer1 btn" onclick="questionAnswer('1')"> 1</button>
+     <button class="answer2 btn" onclick="questionAnswer('2')">2</button>
+     <button class="answer3 btn" onclick="questionAnswer('3')">3</button>
+     <button class="answer4 btn" onclick="questionAnswer('4')">4</button>
+     </div>   
+     <div>
+         <button class="nextBtn btn">Next</button>
+     </div>
+    </div>
+  </section>
     <section id="show-results" class="result-container hide">
         <p class="name-input">Input Name</p>
-        <input class="name"></input> 
+        <input class="name"></input>
         <button class="submit-btn">Submit</button>
         <p class="final-result"></p>
         <p class="saved-name">Name:</p>
         <p class="saved-result">Score:</p>
     </section>
- <script src="css/script.js"></script>
+    <script src="css/script.js"></script>
 </body>
+
 </html>
