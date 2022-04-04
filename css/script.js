@@ -3,8 +3,22 @@ const answerBtn1 = document.querySelector(".answer1");
 const answerBtn2 = document.querySelector(".answer2");
 const answerBtn3 = document.querySelector(".answer3");
 const answerBtn4 = document.querySelector(".answer4");
-let countdownTimer = 50;
+const nxtBtn = document.querySelector('.nextBtn')
 const timer = document.querySelector(".timer")
+const body = document.querySelector('body')
+const questionBox = document.querySelector(".question-1")
+const submitBtn = document.querySelector(".submit-btn");
+const finalGrade = document.querySelector(".final-result");
+const savedName = document.querySelector(".saved-name");
+const savedGrade = document.querySelector(".saved-result");
+const resultContainer = document.getElementById("show-results");
+const questionContainer = document.querySelector(".question-container2")
+let questionIndex = 0;
+let countdownTimer = 60;
+let score = 0;
+let counter = document.querySelector(".score");
+
+
 let questions = [
     {
       question: " What is the first number place holder of an Array? ",
@@ -48,15 +62,11 @@ let questions = [
     },
 ];
 
-let questionBox = document.querySelector(".question-1")
-let questionIndex = 0;
-
-
-
-
-//added am event listener to start a timer 
-startBtn.addEventListener("click", startQuiz);
  
+startBtn.addEventListener("click", startQuiz);
+nxtBtn.addEventListener('click', nextQuestion)
+submitBtn.addEventListener("click", saveInfo);
+
 function startQuiz(event) {
 event.preventDefault()
 timer.classList.remove("hide");
@@ -66,23 +76,20 @@ instructions = document.querySelector(".instructions");
 instructions.classList.add("hide");
 title = document.querySelector(".title");
 title.classList.add("hide");
-questionContainer = document.querySelector(".question-container")
+
 questionContainer.classList.remove("hide");
  displayQuestion()
-//  startTime()
+ startTime()
 
 }
-
 
 function startTime(){
   let timerInterval = setInterval(function (){
      countdownTimer--;
      timer.textContent = countdownTimer + " seconds left";
-     //added end quiz and display results
+
      if (countdownTimer  === 0 || questions.length == questionIndex){
          clearInterval(timerInterval);
-         questionContainer.classList.add("hide")
-         resultContainer.classList.remove("hide")
          showResults()
          return;
      }
@@ -96,51 +103,54 @@ function displayQuestion() {
    answerBtn2.textContent = quest.answerBtn2;
    answerBtn3.textContent = quest.answerBtn3;
    answerBtn4.textContent = quest.answerBtn4;
-  
 };
-let score = 0;
-let result = document.querySelector(".result1");
-let counter = document.querySelector(".score");
 
+function nextQuestion(){
+    questionIndex++
+    displayQuestion()
+    body.style.backgroundColor = 'rgb(21, 133, 224)'
+  answerBtn1.disabled = false
+  answerBtn2.disabled = false
+  answerBtn3.disabled = false
+  answerBtn4.disabled = false
+}
 
-//added function to run next question 
 function questionAnswer(answer){
-    if(questions[questionIndex].correct == answer){
-        result.textContent = "Correct!";
-      counter.textContent = score+=20;
-      localStorage.setItem("counter", score)
-    } else 
-    {  result.textContent = "Incorrect!";
-// added increased counter if answer if incorrect
-        countdownTimer-=10; 
-    };
-        questionIndex++
-        displayQuestion()
+  if(questions[questionIndex].correct == answer){
+    
+    counter.textContent = score+=20;
+    localStorage.setItem("counter", score)
+    body.style.backgroundColor = 'green'  
+  }else {  
+
+    countdownTimer-=10; 
+    body.style.backgroundColor = 'red'
   };
+  answerBtn1.disabled = true
+  answerBtn2.disabled = true
+  answerBtn3.disabled = true
+  answerBtn4.disabled = true
+};
 
-const resultContainer = document.getElementById("show-results");
+function showResults(){
+  body.style.backgroundColor = 'rgb(21, 133, 224)'
+  timer.textContent = ''
+  result.textContent = ''
+  questionContainer.classList.add("hide")
+  resultContainer.classList.remove('hide')
+}
 
-   
-const submitBtn = document.querySelector(".submit-btn");
-const finalGrade = document.querySelector(".final-result");
-const savedName = document.querySelector(".saved-name");
-const savedGrade = document.querySelector(".saved-result");
-
-
-
-submitBtn.addEventListener("click", function(event) {
+function saveInfo(event) {
  event.preventDefault()
+ let userNameSaved = document.querySelector(".name").value;
  if (userNameSaved === "") {
    finalGrade.textContent = "Enter a name"
  } 
  else {
-  
-
-// added local storage to display username and score 
- let userNameSaved = document.querySelector(".name").value;
- userName = localStorage.getItem("name");
  localStorage.setItem("name", userNameSaved);
+ let userName = localStorage.getItem("name");
+ 
  savedName.textContent = "Name: " + userNameSaved;
  savedGrade.textContent = "Score: " + score;
  }
-});
+};

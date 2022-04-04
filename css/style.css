@@ -9,15 +9,16 @@ body {
     text-align: center;
 }
 
-.details {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .details2 {
-    height: 20vh;
+    height: 18vh;
 }
+
 
 .answer-btn-container{
     display: grid;
@@ -41,7 +42,8 @@ body {
 }
 
 .startBtn {
-    box-shadow: 0 0 5px 2px;
+    box-shadow: 0 0 10px 1px;
+    border: 1px black solid;
 }
 
 #start-button:hover {
@@ -54,11 +56,7 @@ body {
 }
 
 .question-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-
+    margin-top: 7%;
 }
 
 .question-container2 {
@@ -71,14 +69,12 @@ body {
     box-shadow: 8px 8px 13px 5px ;
 }
 
-
-
 .question-1 {
     font-size: 40px;
     align-items: center;
     
 }
-/* added hover effects for buttons*/
+
 .btn {
     padding: 15px;
     margin-top: 20px;
@@ -90,46 +86,33 @@ body {
 }
 
 .btn:hover {
-    background-color: green;
+    background-color: rgb(23, 184, 23);
 
     font-weight: bolder;
     font-size: 40px;
 }
 
-.result1 {
-    font-style: italic;
-    font-size: 50px;
-    text-align: center;
-    font-weight: bolder;
-}
-.result-container {
-    border: black 2px groove;
-    width: 30%;
-    height: 550px;
-    margin-left: 33%;
-    margin-top: 11%;
+
+.result-container2 {
+    border: black 2px solid;
+    border-radius: 10px;
+    width: 40vw;
     background-color: white;
+    padding: 10px;
+    box-shadow: 8px 8px 13px 5px ;
 }
 
 .name {
     padding: 20px;
-    margin-left: 18%;
     font-size: 25px;
-    margin-top: 1%;
 }
  
-.submit-btn {
-    padding: 10px;
-    margin-left: 45%;
-    margin-top: 5%;
-    border: black 4px solid;
-    font-size: 25px;
-}
+
 .submit-btn:hover {
     font-size: 30px;
 }
 .final-result {
-    margin-top: 30px;
+ 
     font-size: 25px;
     color: brown;
     margin-left: 30%;
@@ -143,7 +126,7 @@ body {
 }
 
 .saved-name{
- margin-top: 90px;
+
  font-size: 35px;
 }
 
@@ -156,10 +139,12 @@ font-size: 35px;
     text-align: center;
     color: black;
     font-weight: bolder;
+
 }
 
 .score {
     font-size: 45px;
     text-align: center;
     color: rgb(255, 255, 255);
+
 }
